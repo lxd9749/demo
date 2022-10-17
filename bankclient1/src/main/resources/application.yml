@@ -1,0 +1,9 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: bank-client1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lxd:123456@localhost:8001/eureka/
