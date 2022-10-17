@@ -1,0 +1,14 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: bank-server
+eureka:
+  client:
+    service-url:
+      defaultZone: http://lxd:123456@localhost:8001/eureka/
+#    healthcheck:
+#      enabled: true
+#  instance:
+#    lease-renewal-interval-in-seconds: 3
+#    lease-expiration-duration-in-seconds: 3

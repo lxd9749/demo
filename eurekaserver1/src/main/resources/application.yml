@@ -1,0 +1,17 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: eureka1
+  security:
+    user:
+      name: lxd
+      password: 123456
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+  instance:
+    hostname: localhost
