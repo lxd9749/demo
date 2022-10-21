@@ -7,4 +7,5 @@
  * @user DELL
  */
 public class Test2 {
+  System.out.println("别人提交到远程仓库的代码");
 }
