@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.mapper.ApSendMapper">
+  <resultMap id="BaseResultMap" type="com.demo.entity.ApSend">
+    <!--@mbg.generated-->
+    <!--@Table ap_send-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="d_qks_id" jdbcType="VARCHAR" property="dQksId" />
+    <result column="max_thr" jdbcType="INTEGER" property="maxThr" />
+    <result column="min_thr" jdbcType="INTEGER" property="minThr" />
+    <result column="pool_uuid" jdbcType="VARCHAR" property="poolUuid" />
+    <result column="r_ptr" jdbcType="BIGINT" property="rPtr" />
+    <result column="s_qks_id" jdbcType="VARCHAR" property="sQksId" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+    <result column="w_ptr" jdbcType="BIGINT" property="wPtr" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, d_qks_id, max_thr, min_thr, pool_uuid, r_ptr, s_qks_id, `type`, w_ptr
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from ap_send
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from ap_send
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.demo.entity.ApSend">
+    <!--@mbg.generated-->
+    insert into ap_send (id, d_qks_id, max_thr, 
+      min_thr, pool_uuid, r_ptr, 
+      s_qks_id, `type`, w_ptr)
+    values (#{id,jdbcType=INTEGER}, #{dQksId,jdbcType=VARCHAR}, #{maxThr,jdbcType=INTEGER}, 
+      #{minThr,jdbcType=INTEGER}, #{poolUuid,jdbcType=VARCHAR}, #{rPtr,jdbcType=BIGINT}, 
+      #{sQksId,jdbcType=VARCHAR}, #{type,jdbcType=TINYINT}, #{wPtr,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.entity.ApSend">
+    <!--@mbg.generated-->
+    insert into ap_send
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="dQksId != null">
+        d_qks_id,
+      </if>
+      <if test="maxThr != null">
+        max_thr,
+      </if>
+      <if test="minThr != null">
+        min_thr,
+      </if>
+      <if test="poolUuid != null">
+        pool_uuid,
+      </if>
+      <if test="rPtr != null">
+        r_ptr,
+      </if>
+      <if test="sQksId != null">
+        s_qks_id,
+      </if>
+      <if test="type != null">
+        `type`,
+      </if>
+      <if test="wPtr != null">
+        w_ptr,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="dQksId != null">
+        #{dQksId,jdbcType=VARCHAR},
+      </if>
+      <if test="maxThr != null">
+        #{maxThr,jdbcType=INTEGER},
+      </if>
+      <if test="minThr != null">
+        #{minThr,jdbcType=INTEGER},
+      </if>
+      <if test="poolUuid != null">
+        #{poolUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="rPtr != null">
+        #{rPtr,jdbcType=BIGINT},
+      </if>
+      <if test="sQksId != null">
+        #{sQksId,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=TINYINT},
+      </if>
+      <if test="wPtr != null">
+        #{wPtr,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.entity.ApSend">
+    <!--@mbg.generated-->
+    update ap_send
+    <set>
+      <if test="dQksId != null">
+        d_qks_id = #{dQksId,jdbcType=VARCHAR},
+      </if>
+      <if test="maxThr != null">
+        max_thr = #{maxThr,jdbcType=INTEGER},
+      </if>
+      <if test="minThr != null">
+        min_thr = #{minThr,jdbcType=INTEGER},
+      </if>
+      <if test="poolUuid != null">
+        pool_uuid = #{poolUuid,jdbcType=VARCHAR},
+      </if>
+      <if test="rPtr != null">
+        r_ptr = #{rPtr,jdbcType=BIGINT},
+      </if>
+      <if test="sQksId != null">
+        s_qks_id = #{sQksId,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        `type` = #{type,jdbcType=TINYINT},
+      </if>
+      <if test="wPtr != null">
+        w_ptr = #{wPtr,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.entity.ApSend">
+    <!--@mbg.generated-->
+    update ap_send
+    set d_qks_id = #{dQksId,jdbcType=VARCHAR},
+      max_thr = #{maxThr,jdbcType=INTEGER},
+      min_thr = #{minThr,jdbcType=INTEGER},
+      pool_uuid = #{poolUuid,jdbcType=VARCHAR},
+      r_ptr = #{rPtr,jdbcType=BIGINT},
+      s_qks_id = #{sQksId,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=TINYINT},
+      w_ptr = #{wPtr,jdbcType=BIGINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
