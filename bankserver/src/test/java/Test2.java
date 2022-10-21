@@ -9,5 +9,6 @@
 public class Test2 {
     public static void main(String[] args) {
         System.out.println("在test分支新写的内容");
+        System.out.println("别人提交到远程仓库的新代码");
     }
 }
